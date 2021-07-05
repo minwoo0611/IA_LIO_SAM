@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/jmw0611/LIO-SAM/AI_LIO/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/jmw0611/LIO-SAM/AI_LIO/src/LIO-SAM/include/**",
+                "/home/jmw0611/LIO-SAM/AI_LIO/src/robot_localization/include/**",
+                "/usr/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14"
+        }
+    ],
+    "version": 4
+}
