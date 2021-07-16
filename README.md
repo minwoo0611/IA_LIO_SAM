@@ -5,7 +5,7 @@
 ## System architecture(Hardware, Software)
 
 <p align='center'>
-    <img src="./config/doc/hardware_setting.png" alt="drawing" width="900"/>
+    <img src="./config/doc/hardware_setting.png" alt="drawing" width="800"/>
 </p>
 <p align='center'>
     <img src="./config/doc/Hardware_calib.png" alt="drawing" width="400"/>
