@@ -149,6 +149,11 @@ public:
     float globalMapVisualizationSearchRadius;
     float globalMapVisualizationPoseDensity;
     float globalMapVisualizationLeafSize;
+    
+    // AI-LIO-SAM
+    float ambientThreshold;
+    int numFirstNeighbor;
+    int numSecondNeighbor;
 
     ParamServer()
     {
@@ -209,6 +214,10 @@ public:
         extTrans = Eigen::Map<const Eigen::Matrix<double, -1, -1, Eigen::RowMajor>>(extTransV.data(), 3, 1);
         extQRPY = Eigen::Quaterniond(extRPY);
 
+        nh.param<float>("lio_sam/ambientThreshold", ambientThreshold, 1400);
+        nh.param<int>("lio_sam/numFirstNeighbor", numFirstNeighbor, 10);
+        nh.param<int>("lio_sam/numSecondNeighbor", numSecondNeighbor, 5);
+    
         nh.param<float>("lio_sam/edgeThreshold", edgeThreshold, 0.1);
         nh.param<float>("lio_sam/surfThreshold", surfThreshold, 0.1);
         nh.param<int>("lio_sam/edgeFeatureMinValidNum", edgeFeatureMinValidNum, 10);

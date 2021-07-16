@@ -935,7 +935,7 @@ public:
         for (int i = 0; i < laserCloudCornerLastDSNum; i++)
         {
         
-            if(laserCloudCornerLastDS->points[i].curvature > 1400){
+            if(laserCloudCornerLastDS->points[i].curvature > ambientThreshold){
                 continue;
             }
             PointType pointOri, pointSel, coeff, new_pointSel, new_point;;
@@ -951,7 +951,7 @@ public:
 
             pointOri = laserCloudCornerLastDS->points[i];
             pointAssociateToMap(&pointOri, &pointSel);
-            kdtreeCornerFromMap->nearestKSearch(pointSel, 10, pointSearchInd, pointSearchSqDis);
+            kdtreeCornerFromMap->nearestKSearch(pointSel, numFirstNeighbor, pointSearchInd, pointSearchSqDis);
 
             new_pointSel.x = pointSel.intensity;
             new_pointSel.y = pointSel.curvature;
@@ -964,7 +964,7 @@ public:
             }
 
             new_kdtreeCornerFromMap->setInputCloud(kdtree_pointCloud);
-            new_kdtreeCornerFromMap->nearestKSearch(new_pointSel, 5, new_pointSearchInd, new_pointSearchSqDis);
+            new_kdtreeCornerFromMap->nearestKSearch(new_pointSel, numSecondNeighbor, new_pointSearchInd, new_pointSearchSqDis);
             cv::Mat matA1(3, 3, CV_32F, cv::Scalar::all(0));
             cv::Mat matD1(1, 3, CV_32F, cv::Scalar::all(0));
             cv::Mat matV1(3, 3, CV_32F, cv::Scalar::all(0));
@@ -1049,7 +1049,7 @@ public:
         for (int i = 0; i < laserCloudSurfLastDSNum; i++)
         {
         
-            if(laserCloudSurfLastDS->points[i].curvature > 1400){
+            if(laserCloudSurfLastDS->points[i].curvature > ambientThreshold){
                 continue;
             }
         
@@ -1067,7 +1067,7 @@ public:
 
             pointOri = laserCloudSurfLastDS->points[i];
             pointAssociateToMap(&pointOri, &pointSel); 
-            kdtreeSurfFromMap->nearestKSearch(pointSel, 10, pointSearchInd, pointSearchSqDis);
+            kdtreeSurfFromMap->nearestKSearch(pointSel, numFirstNeighbor, pointSearchInd, pointSearchSqDis);
 
             new_pointSel.x = pointSel.intensity;
             new_pointSel.y = pointSel.curvature;
@@ -1079,7 +1079,7 @@ public:
                 kdtree_pointCloud -> push_back(new_point);
             }
             new_kdtreeSurfFromMap->setInputCloud(kdtree_pointCloud);
-            new_kdtreeSurfFromMap->nearestKSearch(new_pointSel, 5, new_pointSearchInd, new_pointSearchSqDis);
+            new_kdtreeSurfFromMap->nearestKSearch(new_pointSel, numSecondNeighbor, new_pointSearchInd, new_pointSearchSqDis);
 
             Eigen::Matrix<float, 5, 3> matA0;
             Eigen::Matrix<float, 5, 1> matB0;

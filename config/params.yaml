@@ -53,6 +53,11 @@ lio_sam:
   #                 0, 1, 0,
   #                 0, 0, 1]
 
+  # AI-LIO-SAM setting
+  ambientThreshold: 1400
+  numFirstNeighbor: 10
+  numSecondNeighbor: 5
+
   # LOAM feature threshold
   edgeThreshold: 1.0
   surfThreshold: 0.1
