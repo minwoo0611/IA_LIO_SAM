@@ -8,8 +8,8 @@
     <img src="./config/doc/hardware_setting.png" alt="drawing" width="900"/>
 </p>
 <p align='center'>
-    <img src="./config/doc/Hardware_calib.png" alt="drawing" width="450"/>
-    <img src="./config/doc/Structure.png" alt="drawing" width="450"/>
+    <img src="./config/doc/Hardware_calib.png" alt="drawing" width="400"/>
+    <img src="./config/doc/Structure.png" alt="drawing" width="400"/>
 </p>
 
 It uses the code of LIO-SAM, but there are two differences. 
