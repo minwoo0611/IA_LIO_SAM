@@ -5,16 +5,16 @@
 ## System architecture(Hardware, Software)
 
 <p align='center'>
-    <img src="./config/doc/hardware_setting.png" alt="drawing" width="800"/>
+    <img src="./config/doc/hardware_setting.png" alt="drawing" width="900"/>
 </p>
 <p align='center'>
-    <img src="./config/doc/Hardware_calib.png" alt="drawing" width="800"/>
-    <img src="./config/doc/Structure.png" alt="drawing" width="800"/>
+    <img src="./config/doc/Hardware_calib.png" alt="drawing" width="450"/>
+    <img src="./config/doc/Structure.png" alt="drawing" width="450"/>
 </p>
 
 It uses the code of LIO-SAM, but there are two differences. 
 - In ImageProjection.cpp, give the point an ambient value (ambient is given to the curvature channel). 
-- Add nearest search using ambient in Optimization.cpp.
+- Add nearest search using ambient in Optimization.cpp.(there are new parameters, ambientThreshold, numFirstNeighbor, numSecondNeighbor in params.yaml)
 
 ## Dependency
 
@@ -50,21 +50,21 @@ catkin_make
 
   * You can see the image with different ambient value(brown is low, green is high) and tree map from AI-LIO-SAM. Also, The surrounding environment is shown in the picture below.
 <p align='center'>
-    <img src="./config/doc/tree.png" alt="drawing" width="800"/>
-    <img src="./config/doc/tree_map.png" alt="drawing" width="800"/>
-    <img src="./config/doc/tree_seen.png" alt="drawing" width="800"/>
+    <img src="./config/doc/tree.png" alt="drawing" width="200"/>
+    <img src="./config/doc/tree_map.png" alt="drawing" width="350"/>
+    <img src="./config/doc/tree_seen.png" alt="drawing" width="350"/>
 </p>
 
 * It works in urban environments as well as unstructured environments, and performance may be good or bad depending on the situation. In the Seq 2 photo below left, you can see that the mapped points match well with the real environment. In the case of the middle photo below, it is the result of mapping the urban tunnel. Blue and red show the mapping results of LIO-SAM and AI-LIO-SAM, respectively, and if you look at the picture below on the right, you can see that AI-LIO-SAM matches well with the real environment. In an object with a similar structure, the lidar odometry factor may not be accurate when searching for a location using only x, y, and z. However, accurate values ​​can be obtained if intensity and ambient are additionally used.
 <p align='center'>
-    <img src="./config/doc/Seq2.png" alt="drawing" width="800"/>
-    <img src="./config/doc/Sejong_tunnel_data_lio_ai_lio.png" alt="drawing" width="800"/>
-    <img src="./config/doc/Sejong_tunnel_data.png" alt="drawing" width="800"/>
+    <img src="./config/doc/Seq2.png" alt="drawing" width="200"/>
+    <img src="./config/doc/Sejong_tunnel_data_lio_ai_lio.png" alt="drawing" width="350"/>
+    <img src="./config/doc/Sejong_tunnel_data.png" alt="drawing" width="350"/>
 </p>
 
 * These images are results of my paper. more images can be seen in my paper(./config/doc/KRS-2021-17.pdf).
 <p align='center'>
-    <img src="./config/doc/result.png" alt="drawing" width="800"/>
+    <img src="./config/doc/result.png" alt="drawing" width="900"/>
 </p>
 ## Run the package
 
@@ -93,8 +93,9 @@ rosbag play your-bag.bag -r 3
 
 Thank you for citing AI-LIO-SAM(./config/doc/KRS-2021-17.pdf) if you use any of this code. 
 
-TODO
+
 ```
+TODO
 ```
 
 Part of the code is adapted from [LIO-SAM (IROS-2020)](https://github.com/TixiaoShan/LIO-SAM).
