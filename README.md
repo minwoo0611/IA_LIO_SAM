@@ -33,7 +33,7 @@ It uses the code of LIO-SAM, but there are two differences.
   cmake -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF ..
   sudo make install -j8
   ```
-Also, for AI-LIO-SAM to work, your data needs to work well with LIO-SAM. We recommend that you test whether it works well with LIO-SAM first. (https://github.com/TixiaoShan/LIO-SAM)
+Also, for IA-LIO-SAM to work, your data needs to work well with LIO-SAM. We recommend that you test whether it works well with LIO-SAM first. (https://github.com/TixiaoShan/LIO-SAM)
 
 ## Install
 
@@ -41,21 +41,21 @@ Use the following commands to download and compile the package.
 
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/minwoo0611/AI_LIO
+git clone https://github.com/minwoo0611/IA_LIO_SAM
 cd ..
 catkin_make
 ```
 
 ## Sample dataset images
 
-  * You can see the image with different ambient value(brown is low, green is high) and tree map from AI-LIO-SAM. Also, The surrounding environment is shown in the picture below.
+  * You can see the image with different ambient value(brown is low, green is high) and tree map from IA-LIO-SAM. Also, The surrounding environment is shown in the picture below.
 <p align='center'>
     <img src="./config/doc/tree.png" alt="drawing" width="400"/>
     <img src="./config/doc/tree_map.png" alt="drawing" width="800"/>
     <img src="./config/doc/tree_seen.png" alt="drawing" width="800"/>
 </p>
 
-* It works in urban environments as well as unstructured environments, and performance may be good or bad depending on the situation. In the first picture, Seq 2, you can see that the mapped points match well with the real environment. In the case of the seoncd picture, it is the result of mapping the urban tunnel. Blue and red show the mapping results of LIO-SAM and AI-LIO-SAM, respectively, and if you look at the third picture, you can see that AI-LIO-SAM matches well with the real environment. In an object with a similar structure, the lidar odometry factor may not be accurate when searching for a location using only x, y, and z. However, accurate values ​​can be obtained if intensity and ambient are additionally used.
+* It works in urban environments as well as unstructured environments, and performance may be good or bad depending on the situation. In the first picture, Seq 2, you can see that the mapped points match well with the real environment. In the case of the seoncd picture, it is the result of mapping the urban tunnel. Blue and red show the mapping results of LIO-SAM and IA-LIO-SAM, respectively, and if you look at the third picture, you can see that IA-LIO-SAM matches well with the real environment. In an object with a similar structure, the lidar odometry factor may not be accurate when searching for a location using only x, y, and z. However, accurate values ​​can be obtained if intensity and ambient are additionally used.
 <p align='center'>
     <img src="./config/doc/Seq2.png" alt="drawing" width="800"/>
     <img src="./config/doc/Sejong_tunnel_data_lio_ai_lio.png" alt="drawing" width="800"/>
@@ -91,7 +91,7 @@ rosbag play your-bag.bag -r 3
 
 ## Paper 
 
-Thank you for citing AI-LIO-SAM(./config/doc/KRS-2021-17.pdf) if you use any of this code. 
+Thank you for citing IA-LIO-SAM(./config/doc/KRS-2021-17.pdf) if you use any of this code. 
 
 
 ```
@@ -112,4 +112,4 @@ Part of the code is adapted from [LIO-SAM (IROS-2020)](https://github.com/Tixiao
 
 ## Acknowledgement
 
-  - AI-LIO-SAM is based on LIO-SAM (T. Shan, B. Englot, D. Meyers, W. Wang, C. Ratti, and D. Rus. LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping).
+  - IA-LIO-SAM is based on LIO-SAM (T. Shan, B. Englot, D. Meyers, W. Wang, C. Ratti, and D. Rus. LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping).
