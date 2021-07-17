@@ -1,4 +1,4 @@
-# AI-LIO-SAM
+# IA-LIO-SAM
 
 **Construction monitoring is one of the key modules in smart construction. Unlike structured urban environment, construction site mapping is challenging due to the characteristics of an unstructured environment. For example, irregular feature points and matching prohibit creating a map for management. To tackle this issue, we propose a system for data acquisition in unstructured environment and a framework for Intensity and Ambient Enhanced Lidar Inertial Odometry via Smoothing and Mapping, IA-LIO-SAM, that achieves highly accurate robot trajectories and mapping. IA-LIO-SAM utilizes a factor graph same as Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping (LIO-SAM). Enhancing the existing LIO-SAM, IA-LIO-SAM leverages point’s intensity and ambient value to remove unnecessary feature points. These additional values also perform as a new factor of the K-Nearest Neighbor algorithm (KNN), allowing accurate comparisons between stored points and scanned points. The performance was verified in three different environments and compared with LIO-SAM.**
 
