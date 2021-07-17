@@ -33,7 +33,7 @@ It uses the code of LIO-SAM, but there are two differences.
   cmake -DGTSAM_BUILD_WITH_MARCH_NATIVE=OFF ..
   sudo make install -j8
   ```
-Also, for IA-LIO-SAM to work, your data needs to work well with LIO-SAM. We recommend that you test whether it works well with LIO-SAM first. (https://github.com/TixiaoShan/LIO-SAM)
+Also, for IA-LIO-SAM to work, your data needs to work well with LIO-SAM. We recommend that you test whether it works well with [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM) first. 
 
 ## Install
 
