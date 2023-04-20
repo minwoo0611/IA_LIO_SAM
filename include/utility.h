@@ -1,6 +1,7 @@
 #pragma once
 #ifndef _UTILITY_LIDAR_ODOMETRY_H_
 #define _UTILITY_LIDAR_ODOMETRY_H_
+#define PCL_NO_PRECOMPILE
 
 #include <ros/ros.h>
 
@@ -13,8 +14,6 @@
 #include <nav_msgs/Path.h>
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
-
-#include <opencv/cv.h>
 
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
@@ -29,6 +28,8 @@
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/filters/crop_box.h> 
 #include <pcl_conversions/pcl_conversions.h>
+
+#include <opencv2/opencv.hpp>
 
 #include <tf/LinearMath/Quaternion.h>
 #include <tf/transform_listener.h>
