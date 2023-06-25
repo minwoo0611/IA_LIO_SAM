@@ -95,7 +95,16 @@ Thank you for citing IA-LIO-SAM(./config/doc/KRS-2021-17.pdf) if you use any of 
 
 
 ```
-TODO
+@article{jung2021intensity,
+  title={Intensity and Ambient Enhanced Lidar-Inertial SLAM for Unstructured Construction Environment},
+  author={Jung, Minwoo and Jung, Sangwoo and Jang, Hyesu and Kim, Ayoung},
+  journal={The Journal of Korea Robotics Society},
+  volume={16},
+  number={3},
+  pages={179--188},
+  year={2021},
+  publisher={Korea Robotics Society}
+}
 ```
 
 Part of the code is adapted from [LIO-SAM (IROS-2020)](https://github.com/TixiaoShan/LIO-SAM).
